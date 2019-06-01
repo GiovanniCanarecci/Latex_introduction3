@@ -1,0 +1,67 @@
+
+
+\chapter{Elementi iniziali}
+\section{Sezione}
+Iniziamo con una definizione
+\begin{defin}
+Un sottoinsieme $S \subset \mathbb{R}^3$ si dice una \emph{superficie regolare} se, per ogni punto $p \in S$, esiste un 
+intorno $V$ di $p$ in $\mathbb{R}^3$ e un'applicazione $X : U \rightarrow V \cap S $, dove U è un aperto di $\mathbb{R}^2$,
+ tale che:
+\begin{enumerate}
+ \item  X è differenzibile di classe $C^{\infty}$, cioè scrivendo\\
+$$X(u,v)=(x(u,v),y(u,v),z(u,v))  \qquad (u,v) \in U$$
+le funzioni $x(u,v),y(u,v),z(u,v)$ sono $C^{\infty}$.
+\item X è un omeomorfismo. Cioè X è continua ed esiste l'inversa continua
+$$X^{-1} : V \cap S \rightarrow U. $$
+\item (Condizione di regolarità) Per ogni punto $q \in U$, il differenziale $dX_q : \mathbb{R}^2 \rightarrow \mathbb{R}^3$
+è iniettivo.
+\end{enumerate}
+\end{defin}
+\begin{es}
+ (\emph{Superficie tangente}). Sia $\alpha : I \rightarrow \mathbb{R}^3$ la parametrizzazione di una curva. Si definisce 
+superficie tangente alla curva $\alpha$
+$$X(t,v)=\alpha(t)+v\alpha^{'}(t) \qquad (t,v) \in I \times \mathbb{R}$$
+la superficie generata da tutte le rette tangenti alla curva.
+\end{es}
+
+\begin{prop}
+ \emph{(Condizione di regolarità per alcune superficie).} I criteri per la regolarità delle rigate tangenti, dei cilindri
+ e dei coni sono le seguenti:
+\begin{itemize}
+ \item Sia $\alpha : (a,b) \rightarrow \mathbb{R}^3$ una curva regolare la cui curvatura $K(\alpha)$ è ovunque diversa da zero.
+Allora la rigata tangente X ad $\alpha$ è regolare dappertutto tranne che lungo $\alpha$.
+\item Un cilindro $X(t,v)=\alpha(t)+vw \qquad (t,v) \in I \times \mathbb{R}$ è regolare in tutti i punti in cui $\alpha^{'} \wedge w$
+non si annulla.
+\item Un cono $X(t,v)= P + v(\alpha(t)-P) \qquad (t,v) \in I \times \mathbb{R}$ è regolare dovunque $v\alpha \wedge 
+\alpha^{'}$ è diverso da zero. Un cono non è mai regolare nel suo vertice.
+\end{itemize}
+\end{prop}
+
+\begin{proof} Dimostriamo prendendo in considerazione i tre casi distinti:
+\begin{itemize}
+ \item nel primo caso l'equazione della superficie sarà
+$$X(t,v)=\alpha(t)+v\alpha^{'}(t)$$
+per avere la regolarità $X_t$ e $X_v$ non devono giacere sulla stessa retta, cioè
+\\\\
+\begin{align*}
+X_t&=\alpha^{'}(t)+v\alpha^{''}(t)\\
+X_v&=\alpha^{'}(t)\\
+\Rightarrow& X_t\wedge X_v=(\alpha^{'}(t)+v\alpha^{''}(t))\wedge \alpha^{'}(t)=\\
+&=v\alpha^{''}(t)\wedge \alpha^{'}(t)\neq0 \Longleftrightarrow v\neq0
+\end{align*}
+
+\item nel secondo caso abbiamo
+\begin{align*}
+X_t&=\alpha^{'}(t)\\
+X_v&=w\\
+\Rightarrow& X_t\wedge X_v=\alpha^{'}(t)\wedge w\neq0
+\end{align*}
+\item nell'ultimo caso abbiamo
+\begin{align*}
+X_t&=v\alpha^{'}(t)\\
+X_v&=\alpha(t)+P\\
+\Rightarrow& X_t\wedge X_v=v\alpha^{'}(t)\wedge(\alpha^{'}(t)+P)=v\alpha^{'}(t)\wedge\alpha\neq0
+\end{align*}
+
+\end{itemize}
+\end{proof}
